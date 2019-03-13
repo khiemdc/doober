@@ -6,7 +6,6 @@ $background-color: #F2F3F1;
 
 
 .topnav-fixed {
-    // height: 100%;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -17,7 +16,6 @@ $background-color: #F2F3F1;
     padding-top: 20px;
   }
 
-
 .section-showcase{
     background-color: $background-color;
     // height:230px;
@@ -25,8 +23,7 @@ $background-color: #F2F3F1;
     background-size: cover;
     padding: 50px 15px 30px 15px;
     text-align: center;
-
-    }
+  }
 
 .image-brand {
     padding: 0 !important;
@@ -94,7 +91,6 @@ $background-color: #F2F3F1;
     
     .btn-success {
       background-color: #5ab2ca !important;
-      
     }
   
     li { 
@@ -164,8 +160,6 @@ $background-color: #F2F3F1;
         padding-top:0;
     }
 }
-
-
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -313,15 +307,19 @@ $background-color: #F2F3F1;
   }
 // Side bar
 .sidebar {
-  margin-top: -40px;
-  padding: 50px 10px 20px 10px;
   width: 320px;
-  background-color: $background-color;
   position: fixed;
-  height: 100%;
-  overflow: auto;
+  top: 361px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
 }
-
 .sidebar a {
   display: block;
   color: black;
@@ -408,7 +406,7 @@ hr {
 }
 
 .filter-text {
-  margin: 50px 0 20px 50px;
+  margin: 30px 0 20px 50px;
 }
 
 .checkbox {
@@ -418,3 +416,10 @@ hr {
 .fa-angle-down {
   font-size: 20px;
 }
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
