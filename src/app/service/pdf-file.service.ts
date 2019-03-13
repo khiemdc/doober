@@ -12,7 +12,7 @@ constructor(private http: HttpClient) { }
 
 public getPdfFiles(): Observable<PdfFile[]>{
   // return this.http.get<PdfFile[]>('http://localhost:41516/api');
-  return this.http.get<PdfFile[]>('../../src/app/shared/files.json');
+  return this.http.get<PdfFile[]>('assets/files.json');
 }
 
 
