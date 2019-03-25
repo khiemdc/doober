@@ -20,8 +20,6 @@ export class ReviewComponent implements OnInit, OnDestroy {
   renderText = true;
   searchText: string;
 
-  filePath: string;
-
   @ViewChild(PdfViewerComponent) private pdfComponent: PdfViewerComponent;
   constructor(private pdfFileService: PdfFileService, private route: ActivatedRoute) { }
 
