@@ -11,10 +11,9 @@ export interface Terrorist {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  
   categories: string[] = ['Category 1', 'Category 2', 'Category 3'];
   sortBy: string[] = ['Topic', 'Country', 'Rating'];
-  
+
   categoryForm: FormGroup;
   sortByForm: FormGroup;
   default = 'Most Popular';
@@ -41,7 +40,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  
   setStep(index: number) {
     this.step = index;
   }

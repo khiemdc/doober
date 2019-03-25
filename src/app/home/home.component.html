@@ -1,18 +1,296 @@
-<div class="content mb-5">
-  <section class="text-center pb-3">
-    <div class="row mt-5">
-      <mdb-card *ngFor="let item of files" class="col-3 mt-4 pt-2 mb-4">
-        <mdb-card-text><h5>
-            <a href='all/{{item.id}}'>{{item.name}}</a></h5>
-            </mdb-card-text>
-            <a href='all/{{item.id}}'>
-                <img class="img-fluid" src="{{ item.filePath }}"
-            /></a>
-              <!-- <mdb-card-text><strong>Type:</strong> {{item.type}}</mdb-card-text>
-                <mdb-card-text><strong>Tags:</strong> {{item.tags}}</mdb-card-text> -->
-                <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponentClick($event)'>{{item.rating}} Stars</app-rating>
-                <mdb-card-text>{{item.rating}} Stars</mdb-card-text>
-      </mdb-card>
+<!-- Navbar -->
+<div class="topnav-fixed">
+    <div class="row">
+        <div class="col-3 ">
+        <logo>
+          <div class="logo-wrapper waves-light">
+            <a href="http://www.thebuffalogroup.com">
+              <img src="./assets/images/TheBuffaloGroup.png" class="img-fluid flex-center image-brand">
+            </a>
+          </div>
+        </logo>
+        </div>
+        <div class="col-4 mt-4">
+          <mdb-item-head mdbRippleRadius>
+              <i class="fa fa-diamond navbar-delp"></i></mdb-item-head>
+            <mdb-navbar-brand>
+              <a class="doorber-finder" routerLink="/home">Doober Finder</a>
+            </mdb-navbar-brand>
+          <links>
+            <ul class="navbar-nav mr-auto">
+              <!-- <form class="search">
+                <div>
+                  <input type="search" placeholder="Search...">
+                  <button type="submit" value=""><img src="./assets/images/search.png" alt="Search"></button>
+                </div>
+              </form> -->
+              <div class="search">
+                <input type="search" [(ngModel)]="searchText" placeholder="Search" />
+                <button type="submit" value=""><img src="./assets/images/search.png" alt="Search"></button>
+              </div>
+            </ul>
+          </links>
+        </div>  
+        <div class="col-5" style="margin-top:145px; padding-left: 50px;">  
+          <links>  
+            <ul>
+              <li class="nav-link waves-light" mdbRippleRadius>
+                <i class="fa fa-home"></i>&nbsp;
+                  <a class="clearfix d-none d-sm-inline-block" routerLink="/home">Home</a>
+              </li>    
+              <li class="nav-link waves-light" mdbRippleRadius>
+                <i class="fa fa-upload"></i>&nbsp;
+                  <a class="clearfix d-none d-sm-inline-block" routerLink="/upload">Upload</a>
+              </li>    
+              <li class="nav-link waves-light" mdbRippleRadius>
+                <i class="fa fa-user"></i>&nbsp;
+                <a class="clearfix d-none d-sm-inline-block">Login</a>
+              </li>
+              <li class="nav-link waves-light" mdbRippleRadius>
+                <i class="fa fa-comments-o"></i>&nbsp;
+                <a>Support</a>
+              </li>    
+            </ul>
+          </links>    
+      </div>   
+    </div>
+  </div>
+<!-- Home section   -->
+<div class="section-home-bar">
+  <div class="row">
+    <div class="col">
+    <hr>       
+    <div class="row">
+      <div class="col-2">
+        <form [formGroup]="categoryForm">
+          <select class="form-control" formControlName="category">
+          <option [ngValue]="null" [selected]="true">Select Category</option>
+          <option *ngFor="let c of categories" [ngValue]="c">{{ c }}</option>
+          </select>
+        </form>
+      </div>
+      <div class="col-4">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Recent')">Recent</button>
+          <button class="tablinks" onclick="openCity(event, 'Top100')">Top 100</button>
+          <button class="tablinks" onclick="openCity(event, 'MostViewed')">Most Viewed</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="level">
+          <button class="levellinks" onclick="openLevel1(event, 'Level1')">Level 1 <span class="level-space">|</span></button>
+          <button class="levellinks" onclick="openLevel2(event, 'Level2')">Level 2 <span class="level-space">|</span></button>
+          <button class="levellinks" onclick="openLevel3(event, 'Level3')">Level 3 <span class="level-space">|</span></button>
+          <button class="levellinks" onclick="openLevel4(event, 'Level4')">Level 4</button>
+        </div>
+      </div>
+      <div class="col-1">
+        <p class="sort-by">Sort by</p>
+      </div>
+      <div class="col-2">
+        <form [formGroup]="sortByForm">
+          <select class="form-control" formControlName="sortBy">
+          <option [ngValue]="null" [selected]="true">Most Popular</option>
+          <option *ngFor="let c of sortBy" [ngValue]="c">{{ c }}</option>
+          </select>
+        </form>
+      </div>
+    </div>  
+    <hr><br>
+    </div>
+  </div>
+</div>
+<div class="section-home">
+  <div class="row">
+  <!-- Home Side bar -->
+    <div class="col-2">
+      <div class="wrapper">
+      <div class="sidebar">
+      <h5 class="filter-text">Filter by</h5>
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Location
+            </mat-panel-title>
+              <i class="fa fa-angle-down"></i>
+          </mat-expansion-panel-header>
+          <div>
+              <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
+                  <option *ngFor="let ctry of countries" 
+                          [value]="ctry.country"> 
+                    {{ ctry.country }}
+                  </option>
+             </select>
+            </div>
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Topic
+            </mat-panel-title>
+            <i class="fa fa-angle-down"></i>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <mat-select placeholder="Terrorist groups">
+              <mat-option *ngFor="let terrorist of terrorists" [value]="terrorist.value">
+                {{terrorist.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        
+        
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Rating
+            </mat-panel-title>
+            <i class="fa fa-angle-down"></i>
+          </mat-expansion-panel-header>
+          <div class="rating-box">
+            <div class="rating" style="width: 20%">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <br />
+          <div class="rating-box">
+            <div class="rating" style="width: 40%">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <br />
+          <div class="rating-box">
+            <div class="rating" style="width: 60%">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <br />
+          <div class="rating-box">
+            <div class="rating" style="width: 80%">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>  
+          <br />
+          <div class="rating-box">
+            <div class="rating" style="width: 100%">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <mat-form-field>
+            <input matInput placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" readonly>
+          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">End</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
+      <div class="row mt-3">
+        <div class="col-6">
+      <h5 class="filter-text">Filter 1</h5>
+      <div class="checkbox">
+        <mat-checkbox>Branch</mat-checkbox><br>
+        <mat-checkbox>Topic</mat-checkbox><br>
+        <mat-checkbox>Location</mat-checkbox><br>
+        <mat-checkbox>Division</mat-checkbox>
+      </div>
+      </div>
+      <div class="col-6">
+      <h5 class="filter-text">Filter 2</h5>
+      <div class="checkbox">
+        <mat-checkbox>Day</mat-checkbox><br>
+        <mat-checkbox>Week</mat-checkbox><br>
+        <mat-checkbox>Month</mat-checkbox><br>
+        <mat-checkbox>Year</mat-checkbox>
+      </div>
+      </div>
+      </div>
+      <br><br><br><br>
+    </div>
+  </div>
+</div>
+<!-- Content     -->
+<div class="col-10 pl-5">
+  <!-- <div class="col-4 search-div">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search" />
+  </div> -->
+<section class="text-center pb-3">
+  <div *ngIf='!isSelected' class="row mt-2">
+    <mdb-card *ngFor="let item of files | filter: searchText" class="col-3 mt-4 pt-2 mb-4">
+      <mdb-card-text>
+        <h5><a href='review/{{item.id}}'>{{item.name}}</a></h5>
+      </mdb-card-text>
+        <a href='review/{{item.id}}'>
+          <img class="img-fluid" src="{{ item.imagePath }}"
+        /></a>
+        <!-- <mdb-card-text><strong>Type:</strong> {{item.type}}</mdb-card-text>
+        <mdb-card-text><strong>Tags:</strong> {{item.tags}}</mdb-card-text> -->
+        <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponentClick($event)'></app-rating>
+      <mdb-card-text>{{item.rating}} Stars</mdb-card-text>
+    </mdb-card>
     </div>
   </section>
+  
+    <!-- <div>
+      <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
+          <option *ngFor="let ctry of countries" 
+                  [value]="ctry.country"> 
+            {{ ctry.country }}
+          </option>
+     </select>
+    </div> -->
+    <div *ngIf='isSelected'>
+    <h5><strong>{{ selected }} Documents (<span class="total-number">{{totalNumber}}</span>)</strong></h5>
+    <section class="text-center pb-3">
+        <div class="row mt-2">
+          <mdb-card *ngFor="let item of selectedData | filter: searchText" class="col-3 mt-4 pt-2 mb-4">
+            <mdb-card-text>
+              <h5><a href='review/{{item.id}}'>{{item.name}}</a></h5>
+            </mdb-card-text>
+              <a href='review/{{item.id}}'>
+                <img class="img-fluid" src="{{ item.imagePath }}"
+              /></a>
+              <!-- <mdb-card-text><strong>Type:</strong> {{item.type}}</mdb-card-text>
+              <mdb-card-text><strong>Tags:</strong> {{item.tags}}</mdb-card-text> -->
+              <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponentClick($event)'></app-rating>
+            <mdb-card-text>{{item.rating}} Stars</mdb-card-text>
+          </mdb-card>
+          </div>
+        </section>
+        <div class="row">
+          <button mdbBtn class="button" color="blue-grey" mat-button (click)="backToAll()"><i class="fa fa-arrow-left"></i>&nbsp;Back to All countries</button>
+        </div>
+        </div>
+</div>
+</div>
 </div>

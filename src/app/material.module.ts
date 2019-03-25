@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 @NgModule({
     imports: [
         Material.MatGridListModule,
-        Material.MatFormFieldModule,
         Material.MatInputModule,
+        Material.MatFormFieldModule,
         Material.MatRadioModule,
         Material.MatDatepickerModule,
         Material.MatNativeDateModule,
