@@ -272,7 +272,7 @@
       </mat-form-field>
     </div>
     <div *ngIf='!file'>Loading...</div>
-      <pdf-viewer [src]="filePath"
+      <pdf-viewer [src]="file?.filePath"
                   [zoom]="1.35">
       </pdf-viewer>
     </div>    
