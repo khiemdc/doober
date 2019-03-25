@@ -1,0 +1,83 @@
+[
+    {
+      "id": "1",
+      "name": "The illusion of Afghanistan's electoral representative democracy",
+      "type": "Unclassified",
+      "description": "On 9 October 2004 Afghanistan held a presidential election to replace the post-Taliban, transitional government that had administered Afghanistan since December 2001. Nearly a year later, September 2005, parliamentary and pro-vincial  council  elections  were  held.  This  electoral  sequence  was  repeated  in August 2009 for Afghan presidential and provincial councils and in September 2010 for the Afghan Parliament.",
+      "filePath": "../../assets/pdf/foreignfighters.pdf",
+      "imagePath": "../../assets/images/afghanistan.jpg",
+      "country": "Afghanistan",
+      "rating": 4,
+      "rating_2": 2
+    }, 
+    {
+      "id": "2",
+      "name": "The Economic Impact Of The Syrian War And The Spread Of ISIS",
+      "type": "Classified",
+      "description": "In the absence of the Green Lantern Corps, Sinestro and his fear-inducing Yellow Lantern Corps patrol the universe as its sole protectors—but deep in space, a green light still burns. Harnessing the remainder of his will, Hal Jordan must become a one-man GL Corps to defeat his greatest foe and restore freedom to the cosmos.",
+      "filePath": "../../assets/pdf/economic.pdf",
+      "imagePath": "../../assets/images/syria.png",
+      "country": "Syria, Iraq",
+      "rating": 3
+    },
+    {
+        "id": "3",
+        "name": "Syria’s civil war has reinforced Iraqi state weakness and fears",
+        "type": "Classified",
+        "description": "Syria’s civil war has reinforced Iraqi state weakness and fears of partition along ethno-sectarian lines. The conflict has encour-aged the proliferation of militias, refugee flows and Kurdish transnationalism, all of which challenge Baghdad’s sovereignty and enhance the de facto authority of sub-state actors.",
+        "filePath": "../../assets/pdf/syria.pdf",
+        "imagePath": "../../assets/images/pakistan.jpg",
+        "country": "Pakistan",
+        "rating": 4
+      },
+      {
+        "id": "4",
+        "name": "The Islamic State Of Iraq And Al-Sham And Its Urban Warfare Tactics",
+        "type": "Unclassified",
+        "description": "The origin of the Islamic State of Iraq and al-Sham (ISIS) can be traced back to theestablishment of al-Qaeda in Iraq in 2004 by Abu Musab al-Zarqawi. In 2006 Zarqawi was killedby a United States military air strike, and shortly thereafter the Islamic State of Iraq (ISI) wasformed under the leadership of Abu Omar al-Baghdadi. In 2010 al-Baghdadi resumed theleadership of ISI. Three years later ISI stretched into Syria, renaming itself ISIS.",
+        "filePath": "../../assets/pdf/iraq.pdf",
+        "imagePath": "../../assets/images/iraq.jpg",
+        "country": "Iran",
+        "rating": 2
+      },
+      {
+        "id": "5",
+        "name": "ISIS   indoctrination   and   deployment   of   children   is   largely   extrapolated",
+        "type": "Classified",
+        "description": "Existing   research   on   ISIS   indoctrination   and   deployment   of   children   is   largely   extrapolated  from  obtained  ISIS  documents  and  disseminated  propaganda.1 Although previous research efforts have provided invaluable insights into ISIS child soldiering and traumatization,  their  utilized  data  was  associated  with  multiple  caveats,  and  thus,  left  major  elements  and  phases  of  child  recruitment  and  deployment    unexplored.",
+        "filePath": "../../assets/pdf/isischild.pdf",
+        "imagePath": "../../assets/images/syria.jpg",
+        "country": "Syria",
+        "rating": 2
+      },
+      {
+        "id": "6",
+        "name": "Foreign Fighters In Syria And Iraq And The Socio-Economic Enviornment",
+        "type": "Unclassified",
+        "description": "There is a vibrant debate in the literature on the educational background and the employment status of militants who leave European country to join the Islamic State (IS). The question to be answered is whether and to what degree we are dealing with educated, employed individuals, or with rather uneducated and often unemployed ones.",
+        "filePath": "../../assets/pdf/foreignfighters.pdf",
+        "imagePath": "../../assets/images/foreign_fighters.jpg",
+        "country": "Iraq",
+        "rating": 3
+      },
+      {
+        "id": "7",
+        "name": "As North Korea Ponders Economic Reform, Its Top Diplomat To Visit VN",
+        "type": "Unclassified",
+        "description": "Spinning directly out of the epic events of DC UNIVERSE: REBIRTH #1, the Fastest Man Alive finds himself at the center of a DC Universe at a crossroads.",
+        "imagePath": "../../assets/images/north-korea.jpg",
+        "filePath": "../../assets/pdf/afghanistan-controversies.pdf",
+        "country": "North Korea",
+        "rating": 4
+      },
+      {
+        "id": "8",
+        "name": "Al-Qaida's Complex Balancing Act In Syria",
+        "type": "Unclassified",
+        "description": "Al-Qaida  has  been  evolving  and  adapting  to  changing  circumstances  ever  since  its  formation  in  the  late-1980s.  Initially  an  elite,  cellular  organisation  that  embedded  itself  within  safe  environments  from  which  to  plot spectacular terrorist attacks, al-Qaida transitioned into a global movement following the September 11, 2001 attacks, in part due to the loss of its Afghan safe-haven but also to take advantage of its growing name recognition. That strategy of affiliation – acquiring loyalist militant wings across the Islamic world – made up for  al-Qaida’s  loss  of  power  in  South  Asia  after  the  U.S.  invasion  of  Afghanistan,  but  it  also  presented  what  had been a centrally-led organisation with substantial challenges of command and control.",
+        "imagePath": "../../assets/images/iran.jpg",
+        "filePath": "../../assets/pdf/alqaida.pdf",
+        "country": "Afghanistan",
+        "rating": 2
+      }
+]
