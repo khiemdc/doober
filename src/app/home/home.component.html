@@ -108,7 +108,7 @@
       <div class="sidebar">
       <h5 class="filter-text">Filter by</h5>
       <mat-accordion class="example-headers-align">
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               Location
@@ -128,7 +128,7 @@
             <button mat-button color="primary" (click)="nextStep()">Next</button>
           </mat-action-row>
         </mat-expansion-panel>
-        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               Topic
