@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "country": "Afghanistan"
+    },
+    {
+        "id": 2,
+        "country": "Pakistan"
+    },
+    {
+        "id": 3,
+        "country": "Syria"
+    },
+    {
+        "id": 4,
+        "country": "Iran"
+    },
+    {
+        "id": 5,
+        "country": "Iraq"
+    },
+    {
+        "id": 6,
+        "country": "North Korea"
+    }
+]

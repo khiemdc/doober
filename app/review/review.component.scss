@@ -1,0 +1,165 @@
+$primary-color: #00aff0;
+$secondary-color: #7fba00;
+$light-color: #e4eef2;
+$dark-color: #333333;
+$background-color: #F2F3F1;
+
+.section-review {
+    position: fixed;
+    // display: flex;
+    width: 100%;
+    background-color: #f5f5f5;
+    margin-top: 200px!important;
+    padding: 10px 30px;
+    z-index: 9999;
+  }
+  
+  .sidebar-review {
+    position: fixed;
+    top: 300px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+
+  .content-review {
+    margin-top: 300px!important;
+    // margin-left: 10px!important;
+    text-align: center;
+    padding: 1px 0px;
+  }
+
+  hr {
+    height: 0.25px;
+    width: 100%;
+    color: darkgray;
+    background-color: darkgray;
+    margin: 0 0 10px 0;
+    padding: .25px 0;
+    border: none;
+  }
+  
+    .sort-by {
+    float: right !important;
+    padding: 0;
+    }
+
+    .level {
+        width: 65%;
+        // margin-left: 20px;
+        overflow: hidden;
+        // border: 1px solid $light-color;
+        background-color: $background-color;
+        color: $dark-color;
+        font-size: 18px;
+      }
+      
+      .levellinks {
+          color: $dark-color;
+      }
+    
+      /* Style the buttons that are used to open the tab content */
+      .level button {
+        background-color: inherit;
+        width: 130px;
+        float: left;
+        // margin-left: 30px;
+        cursor: pointer;
+        padding: 5px 20px;
+        transition: 0.3s;
+        text-transform: none;
+      }
+      
+      /* Change background color of buttons on hover */
+      .level button:hover {
+        color:#00aff0;
+      }
+      
+      /* Create an active/current tablink class */
+      .level button.active {
+        background-color: #ccc;
+      }
+      
+      /* Style the tab content */
+      .levelcontent {
+        display: none;
+        padding: 5px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+      
+      .level-space {
+        margin-left: 5px;
+      }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  .checkbox {
+    margin-left: 30px;
+  }
+  .rating-box {
+    position:relative;
+    vertical-align: middle;
+    float: right !important;
+    margin-right: 80px;
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    // display:inline-block;
+    color: lighten(#1a1717, 25%);
+  
+    &:before{
+      content: "\f006 \f006 \f006 \f006 \f006";
+    }
+  
+    .rating {
+      position: absolute;
+      left:0;
+      top:0;
+      white-space:nowrap;
+      overflow:hidden;
+      color: #F68127;
+      &:before {
+        content: "\f005 \f005 \f005 \f005 \f005";
+      }
+    }
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/images/InnovationTeam.jpg');
+    background-size: cover;
+  }
+
+  .review button {
+    background-color: inherit;
+    // float: right;
+    // margin-left: 30px;
+    cursor: pointer;
+    // padding: 5px 20px;
+    transition: 0.3s;
+    text-transform: none;
+  }
